@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>WellTrack - Wellness Monitoring</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2,
+                #f093fb
+            );
+
+            padding: 30px;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.18);
+
+            backdrop-filter: blur(15px);
+
+            padding: 18px 30px;
+
+            border-radius: 18px;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 35px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .back {
+            color: white;
+
+            text-decoration: none;
+
+            background: rgba(255,255,255,0.2);
+
+            padding: 10px 18px;
+
+            border-radius: 12px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .heading {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .heading h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .heading p {
+            opacity: 0.9;
+        }
+
+        .form-card {
+            background: rgba(255,255,255,0.96);
+
+            padding: 35px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.18);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+
+            color: #444;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 2px solid #eee;
+
+            border-radius: 12px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 15px;
+
+            border: none;
+
+            border-radius: 14px;
+
+            background: linear-gradient(
+                135deg,
+                #667eea,
+                #764ba2
+            );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(102,126,234,0.35);
+        }
+
+        .info {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .info-card {
+            padding: 18px;
+
+            background: #f3f0ff;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            color: #555;
+        }
+
+        .info-card span {
+            display: block;
+
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+        .tip {
+            margin-top: 20px;
+
+            padding: 15px;
+
+            background: #fff4d6;
+
+            border-radius: 12px;
+
+            color: #665200;
+
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            💚 WellTrack
+        </div>
+
+        <a href="login.html" class="back">
+            ← Dashboard
+        </a>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="heading">
+
+            <h1>
+                💚 Wellness Monitoring
+            </h1>
+
+            <p>
+                Track your daily wellness and maintain a healthy routine.
+            </p>
+
+        </div>
+
+
+        <div class="form-card">
+
+            <form action="wellness" method="post">
+
+
+                <div class="form-group">
+
+                    <label>
+                        🏃 Physical Activity
+                    </label>
+
+                    <input
+                        type="number"
+                        name="activityLevel"
+                        min="0"
+                        max="1440"
+                        placeholder="Minutes per day"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ⏱️ Work Hours
+                    </label>
+
+                    <input
+                        type="number"
+                        name="workHours"
+                        step="0.5"
+                        min="0"
+                        max="24"
+                        placeholder="Example: 8"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        ☕ Break Hours
+                    </label>
+
+                    <input
+                        type="number"
+                        name="breakHours"
+                        step="0.5"
+                        min="0"
+                        max="24"
+                        placeholder="Example: 1.5"
+                        required>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn">
+
+                    Calculate Wellness Score →
+                    
+                </button>
+
+            </form>
+
+
+            <div class="info">
+
+                <div class="info-card">
+
+                    <span>🏃</span>
+
+                    <b>60+ Minutes</b>
+
+                    <p>
+                        Recommended activity
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>☕</span>
+
+                    <b>1+ Hour</b>
+
+                    <p>
+                        Recommended breaks
+                    </p>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <span>⏱️</span>
+
+                    <b>≤ 8 Hours</b>
+
+                    <p>
+                        Ideal work time
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="tip">
+
+                💡 <b>Tip:</b>
+                Regular activity and proper breaks can help
+                maintain a balanced daily routine.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
